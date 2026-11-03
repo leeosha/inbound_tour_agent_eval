@@ -2135,7 +2135,7 @@
     const match = /^(itinerary|hotel|scenic|ticket|transport)-top(\d+)-v(\d+)-\d{8}$/u.exec(scenarioId);
     if (!match) return scenarioId;
     const category = { itinerary: "行程规划", hotel: "酒店", scenic: "景点", ticket: "门票", transport: "交通" }[match[1]];
-    return `${category} Top ${match[2]} · v${match[3]}`;
+    return `${category} Top ${match[2]} · ${match[3] === "10" ? "非纯模糊query先答后澄清" : `v${match[3]}`}`;
   }
 
   function renderHistory() {
