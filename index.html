@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; connect-src 'self'; font-src 'none'; form-action 'none'; frame-src 'none'; child-src 'none'; img-src https: http:; manifest-src 'none'; media-src 'none'; object-src 'none'; script-src 'sha256-PdBu4bLg2hQKB4Yuur8/vx/Zd9d8TiylZqdYXg/evSk='; style-src 'sha256-LuPjdnDn3EfqmDPK28Etj770jRoZ7E9FCQiDFplWO1g='; worker-src 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; connect-src 'self'; font-src 'none'; form-action 'none'; frame-src 'none'; child-src 'none'; img-src https: http:; manifest-src 'none'; media-src 'none'; object-src 'none'; script-src 'sha256-2n2ASvC9rpGLFuNwKHqnYkGBFai/y0TMaFbl0+zB8wU='; style-src 'sha256-LuPjdnDn3EfqmDPK28Etj770jRoZ7E9FCQiDFplWO1g='; worker-src 'none'">
   <title>Inbound Tour Evaluation Viewer / 多 Agent 评测监控</title>
   <style>
     * { box-sizing: border-box; }
@@ -1645,7 +1645,7 @@
       scoreState.entries=index.scores;
       scoreState.message=index.configured===false ? "Viewer 尚未配置评分目录（--scores-root）。" : index.scores.length ? "请选择评分版本。" : "本次评测尚无已封存评分。";
       render(state);
-      if(index.scores.length===1) await loadScoreVersion(index.scores[0].scoreReportId);
+      if(index.scores.length) await loadScoreVersion(index.scores[0].scoreReportId);
     } catch(error) { if(session!==scoreSession) return; scoreState.message=error instanceof Error?error.message:"评分加载失败。"; render(state); }
   }
   async function loadScoreVersion(id) {
@@ -2151,7 +2151,7 @@
       button.type = "button";
       button.dataset.historyId = entry.historyId;
       button.setAttribute("aria-current", String(entry.historyId === selectedHistoryId));
-      button.append(node("span", "history-name", historyName(entry.scenarioId)), node("span", "history-time", new Date(entry.sealedAt).toISOString()), node("span", "history-run", entry.runId));
+      button.append(node("span", "history-name", (entry.displayName || historyName(entry.scenarioId))), node("span", "history-time", new Date(entry.sealedAt).toISOString()), node("span", "history-run", entry.runId));
       if (entry.summary) button.append(node("span", "history-run", `${entry.summary.modes.includes("buyer-agent") ? "动态" : "固定"} · ${entry.summary.sourcePolicies.map(value => value === "source-faithful" ? "原题忠实" : "合成人设").join(" / ")} · ${entry.summary.caseCount} Case / ${entry.summary.actualRounds}轮 · 已终止 ${entry.summary.terminated} / 未完整 ${entry.summary.incomplete}`));
       button.title = `${entry.scenarioId || "未命名评测"}\n${entry.reportId}`;
       if (entry.size > MAX_REPORT_BYTES) button.append(node("span", "history-run", "报告超过 128 MiB，请使用分片目录查看"));
