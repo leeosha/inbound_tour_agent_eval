@@ -1,0 +1,237 @@
+{
+  "schema": "inbound-tour.published-evaluation-batch.v1",
+  "title": "五行业 Top 10 · 生产供应接口 · answer-first V10",
+  "sourcePolicy": "All 50 cases newly executed against production Fliggy endpoints; one pilot and nine remaining cases per industry.",
+  "scope": "server-only",
+  "judge": "gpt-5.5",
+  "rubricVersion": "2026-11-05-answer-first-v10-image-delivery",
+  "applicationReleaseSetDigest": "sha256:a0b8de779c16521ad30f2454c8c05265b82311b0969b5bae71b847425544957f",
+  "supplyEndpoint": "https://gestalt.fliggy.com",
+  "industries": [
+    {
+      "industry": "itinerary",
+      "sourceSuite": "itinerary-b1",
+      "sourceSha256": "sha256:5ccaaae4459f251629d894abcea9416323db69a9def6b3284f4d1919cee34bba",
+      "caseIds": [
+        "itinerary-b1-q-0001",
+        "itinerary-b1-q-0002",
+        "itinerary-b1-q-0003",
+        "itinerary-b1-q-0004",
+        "itinerary-b1-q-0005",
+        "itinerary-b1-q-0006",
+        "itinerary-b1-q-0007",
+        "itinerary-b1-q-0008",
+        "itinerary-b1-q-0009",
+        "itinerary-b1-q-0010"
+      ],
+      "components": [
+        {
+          "runId": "run:5cfcdfbd2ff48b28b6ef78cc46558808",
+          "reportId": "evaluation-report:b0edf786312799371ecb9e341fc24566db54f20668c429bab06a0843ff139f33",
+          "scoreReportId": "score-report:14b72bc0eb2ceedb9ea7f614717e18aaa57e2ff7d040741a16146d89ba0462b7",
+          "stage": "pilot"
+        },
+        {
+          "runId": "run:3834e1578ce031dcc63b340192529a96",
+          "reportId": "evaluation-report:a7072e9f858ac57f82b89658e80d4332eb14de5b2dfe5eddf5d2887291e76f16",
+          "scoreReportId": "score-report:6c583046eb6255e62d68fb1fc35c3ee16a0267210861927dd1531cd11a7ee2ef",
+          "stage": "rest"
+        }
+      ],
+      "scoreSummaries": [
+        {
+          "stage": "pilot",
+          "status": "completed",
+          "coverage": 1,
+          "finalScore": 3
+        },
+        {
+          "stage": "rest",
+          "status": "completed",
+          "coverage": 1,
+          "finalScore": 0
+        }
+      ]
+    },
+    {
+      "industry": "hotel",
+      "sourceSuite": "hotel-pilot",
+      "sourceSha256": "sha256:5dc7ff60f2fa0f9b6bae28418ee3ec512386b242120845d820294d1e87cd622b",
+      "caseIds": [
+        "hotel-pilot-q-0001",
+        "hotel-pilot-q-0002",
+        "hotel-pilot-q-0003",
+        "hotel-pilot-q-0004",
+        "hotel-pilot-q-0005",
+        "hotel-pilot-q-0006",
+        "hotel-pilot-q-0007",
+        "hotel-pilot-q-0008",
+        "hotel-pilot-q-0009",
+        "hotel-pilot-q-0010"
+      ],
+      "components": [
+        {
+          "runId": "run:800cd0f50bc467e9e5a9546d84bc8906",
+          "reportId": "evaluation-report:e3ac9bfa7b08cc47b02d02d0e11ccad8faee73ff7935a8de1d1da00afdfe0e8c",
+          "scoreReportId": "score-report:cf4614f5f837648b9a6fc359282efedcbc80995637319bff82e493d745c2d526",
+          "stage": "pilot"
+        },
+        {
+          "runId": "run:e0f4f15f1d4d0bd5167f418298bff78b",
+          "reportId": "evaluation-report:41512e24f3874a0339ff0648d53bc711ba61f2b04c0e05e477b73f931498f187",
+          "scoreReportId": "score-report:e38ae8361d9ba1b2ad187361434298ba164979316a78abeb6bfa1f105d816b7e",
+          "stage": "rest"
+        }
+      ],
+      "scoreSummaries": [
+        {
+          "stage": "pilot",
+          "status": "completed",
+          "coverage": 1,
+          "finalScore": 3
+        },
+        {
+          "stage": "rest",
+          "status": "completed",
+          "coverage": 1,
+          "finalScore": 0
+        }
+      ]
+    },
+    {
+      "industry": "scenic",
+      "sourceSuite": "scenic-b1",
+      "sourceSha256": "sha256:ea1db70f5657c0a1336989903dd1a336a14b59be99df0e795b75b7a919f0af11",
+      "caseIds": [
+        "scenic-b1-q-0001",
+        "scenic-b1-q-0002",
+        "scenic-b1-q-0003",
+        "scenic-b1-q-0004",
+        "scenic-b1-q-0005",
+        "scenic-b1-q-0006",
+        "scenic-b1-q-0007",
+        "scenic-b1-q-0008",
+        "scenic-b1-q-0009",
+        "scenic-b1-q-0010"
+      ],
+      "components": [
+        {
+          "runId": "run:f764fec0028f3291bbf1759cd903807e",
+          "reportId": "evaluation-report:d60cbae30c8ed96a5c4fc3f66b36d25b9ec3d9501c336ed30a67c7a906f19aed",
+          "scoreReportId": "score-report:4cd60135b0e81113c08622bdd62c73aa15a3545bcaee66e1466ada6c19ac3436",
+          "stage": "pilot"
+        },
+        {
+          "runId": "run:e0096962b0eef8124b58e3946ff6ed37",
+          "reportId": "evaluation-report:e1dacade4627a2482be0cd79eb17db57826ad29a9f5b3c35b75a9174d2624045",
+          "scoreReportId": "score-report:2b02fbdb783fc84373808b6a88170e16d11fd1fa286a0ee7c59af48acfffa702",
+          "stage": "rest"
+        }
+      ],
+      "scoreSummaries": [
+        {
+          "stage": "pilot",
+          "status": "completed",
+          "coverage": 1,
+          "finalScore": 3
+        },
+        {
+          "stage": "rest",
+          "status": "completed",
+          "coverage": 1,
+          "finalScore": 0
+        }
+      ]
+    },
+    {
+      "industry": "ticket",
+      "sourceSuite": "ticket-b1",
+      "sourceSha256": "sha256:95360c247292280c1297a96e7361fc4bb795a09836769ce33b3a239b73e11845",
+      "caseIds": [
+        "ticket-b1-q-0001",
+        "ticket-b1-q-0002",
+        "ticket-b1-q-0003",
+        "ticket-b1-q-0004",
+        "ticket-b1-q-0005",
+        "ticket-b1-q-0006",
+        "ticket-b1-q-0007",
+        "ticket-b1-q-0008",
+        "ticket-b1-q-0009",
+        "ticket-b1-q-0010"
+      ],
+      "components": [
+        {
+          "runId": "run:43b6a5ff10584c52aef22677894da725",
+          "reportId": "evaluation-report:56c645ff451a247d0d269a8a8b865dfd8aeea6c2cbb5420139eb52a3a8c8701a",
+          "scoreReportId": "score-report:d0ffedc2c0154d1d1cd28b2a990fd5cda81bb20484dcee52651d4edcf7a840cc",
+          "stage": "pilot"
+        },
+        {
+          "runId": "run:80d44639e565f42f61d47bda478e6364",
+          "reportId": "evaluation-report:1154e939a344d38bd1b442c97ebe7954119e41683d8cfd8780a34cace1c059f1",
+          "scoreReportId": "score-report:2ae22e9437ba1d4aa8e8b69dd375a2fa115c3ce1937fa806fa16429547e81e39",
+          "stage": "rest"
+        }
+      ],
+      "scoreSummaries": [
+        {
+          "stage": "pilot",
+          "status": "completed",
+          "coverage": 1,
+          "finalScore": 1
+        },
+        {
+          "stage": "rest",
+          "status": "completed",
+          "coverage": 1,
+          "finalScore": 0
+        }
+      ]
+    },
+    {
+      "industry": "transport",
+      "sourceSuite": "transport-b1",
+      "sourceSha256": "sha256:cc34ff2a41f122a2456db2bf29221dfc2856435b3fe64ef3da4cba2b0d41f8d7",
+      "caseIds": [
+        "transport-b1-q-0001",
+        "transport-b1-q-0002",
+        "transport-b1-q-0003",
+        "transport-b1-q-0004",
+        "transport-b1-q-0005",
+        "transport-b1-q-0006",
+        "transport-b1-q-0007",
+        "transport-b1-q-0008",
+        "transport-b1-q-0009",
+        "transport-b1-q-0010"
+      ],
+      "components": [
+        {
+          "runId": "run:6cc512c3b575d9855f62b79e9eb11436",
+          "reportId": "evaluation-report:d6254d4a70a57a0a002d83a9d04d693cac0b75602e438018bc4fb6dd6d67f163",
+          "scoreReportId": "score-report:4144a209cc31b312595c401db341c4b12ede6f4299f363687e452c4040476ffa",
+          "stage": "pilot"
+        },
+        {
+          "runId": "run:3c9102125e13ad34721b4bb532cf98ba",
+          "reportId": "evaluation-report:18e8a994056843d72bc19136882b178c843b46fcbf0df18c4f1ea6dded950420",
+          "scoreReportId": "score-report:a0ae58251df17f66f3a5de93d5e6ce701a5d1dfc1b2e1d81230627176c32cc7e",
+          "stage": "rest"
+        }
+      ],
+      "scoreSummaries": [
+        {
+          "stage": "pilot",
+          "status": "completed",
+          "coverage": 1,
+          "finalScore": 1
+        },
+        {
+          "stage": "rest",
+          "status": "completed",
+          "coverage": 1,
+          "finalScore": 0
+        }
+      ]
+    }
+  ]
+}
