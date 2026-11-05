@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; connect-src 'self'; font-src 'none'; form-action 'none'; frame-src 'none'; child-src 'none'; img-src https: http:; manifest-src 'none'; media-src 'none'; object-src 'none'; script-src 'sha256-qBh7Nm2j/RHbiufTQAoS3qGFP5z1JD8lSZc5orb/wp0='; style-src 'sha256-LuPjdnDn3EfqmDPK28Etj770jRoZ7E9FCQiDFplWO1g='; worker-src 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; connect-src 'self'; font-src 'none'; form-action 'none'; frame-src 'none'; child-src 'none'; img-src https: http:; manifest-src 'none'; media-src 'none'; object-src 'none'; script-src 'sha256-bkmZgj+z9YtzN06UzHJnTNveQXc0JwgyhGi7YeSMIU4='; style-src 'sha256-LuPjdnDn3EfqmDPK28Etj770jRoZ7E9FCQiDFplWO1g='; worker-src 'none'">
   <title>Inbound Tour Evaluation Viewer / 多 Agent 评测监控</title>
   <style>
     * { box-sizing: border-box; }
@@ -1023,11 +1023,12 @@
     const connection = element("connection-status");
     connection.textContent = value.adapter === "bundle" ? "分片摘要已校验" : value.connection === "offline" ? "Offline replay" : value.connection === "live" ? "Live" : value.connection === "connecting" ? "Connecting" : value.connection === "reconnecting" ? "Reconnecting" : "Not connected";
     connection.className = `badge ${value.connection === "live" ? "badge-live" : value.connection === "offline" ? "" : "badge-warn"}`;
-    element("run-status").textContent = model.identity.runId ? `${text(model.identity.runId)} · ${text(model.identity.phase)} · ${text(model.identity.status)}` : "No run loaded";
+    element("run-status").textContent = value.raw?.collection ? `Top 10 合并展示 · ${model.cases.length} Case · 2 次源 Run` : model.identity.runId ? `${text(model.identity.runId)} · ${text(model.identity.phase)} · ${text(model.identity.status)}` : "No run loaded";
     element("event-cursor").textContent = value.cursor ? `cursor ${value.cursor}` : "";
     const entries = [
       ["adapter", model.identity.mode || "not connected"],
       ["runId", model.identity.runId],
+      ...(value.raw?.collection ? [["sourceRunIds", value.raw.collection.sources.map(source=>source.report.runId).join(" / ")]] : []),
       ["scenarioId", model.identity.scenarioId],
       ["phase", model.identity.phase],
       ["status", model.identity.status],
@@ -1634,6 +1635,7 @@
     if (state.adapter!=="offline" || !state.raw?.reportId) { render(state); return; }
     const evaluation = state.raw; scoreState.binding = evaluation.reportId;
     if (!hostedViewer) { scoreState.message="打开与当前评测匹配的评分 JSON。"; render(state); return; }
+    if (evaluation.collection) { await refreshCollectionScores(evaluation); return; }
     const session=scoreSession; const controller=new AbortController(); scoreController=controller;
     scoreState.message="正在读取评分版本…"; render(state);
     try {
@@ -1647,6 +1649,49 @@
       render(state);
       if(index.scores.length) await loadScoreVersion(index.scores[0].scoreReportId);
     } catch(error) { if(session!==scoreSession) return; scoreState.message=error instanceof Error?error.message:"评分加载失败。"; render(state); }
+  }
+  async function refreshCollectionScores(evaluation) {
+    const session=scoreSession; const controller=new AbortController(); scoreController=controller;
+    scoreState.message="正在校验两份源评分…"; render(state);
+    try {
+      const scores=await Promise.all(evaluation.collection.sources.map(async ({entry,report}) => {
+        const historyResponse=await fetch(`./${encodeURIComponent(report.reportId)}.json`,{signal:controller.signal});
+        requireScore(historyResponse.ok,"源评分索引读取失败。");
+        const history=await historyResponse.json();
+        requireScore(history.schema==="inbound-tour.score-history.v1" && history.reportId===report.reportId && Array.isArray(history.scores),"源评分索引格式错误。");
+        const selected=history.scores.find(value=>value.rubricVersion===evaluation.collection.rubricVersion);
+        requireScore(selected && selected.reportId===report.reportId && /^score-report:[a-f0-9]{64}$/.test(selected.scoreReportId),"源评分缺少本批 V10 版本。");
+        const response=await fetch(`./${encodeURIComponent(selected.scoreReportId)}.json`,{signal:controller.signal});
+        requireScore(response.ok,"源评分读取失败。");
+        const content=await response.text();
+        requireScore(new TextEncoder().encode(content).byteLength<=MAX_SCORE_BYTES,"源评分文件过大。");
+        const score=await parseScore(content,report);
+        requireScore(score.scoreReportId===selected.scoreReportId && selected.descriptor?.digest===`sha256:${await contentHash(content)}` && selected.descriptor.size===new TextEncoder().encode(content).byteLength,"源评分摘要不匹配。");
+        return {entry,score};
+      }));
+      requireScore(scores.every(({score})=>canonicalJson(score.rubric)===canonicalJson(scores[0].score.rubric)),"两份源评分使用了不同的标准。");
+      const cases=scores.flatMap(({score},sourceIndex)=>score.cases.map(original=>{
+        const item=structuredClone(original);
+        for(const round of item.rounds) for(const assessment of [...round.assessments,...round.automaticAssessments]) for(const citation of assessment.citations) {
+          citation.pointer=citation.pointer.replace(/^\/cases\/(\d+)(?=\/|$)/u,(_,index)=>`/cases/${Number(index)+sourceIndex*5}`);
+        }
+        return item;
+      }));
+      requireScore(cases.length===10 && new Set(cases.map(value=>value.caseId)).size===10,"合并评分的 Case 集合不匹配。");
+      if(session!==scoreSession) return;
+      const id=`score-collection:${evaluation.run.scenarioId}`;
+      scoreState.report={
+        scoreReportId:id,
+        rubric:scores[0].score.rubric,
+        judge:{name:"已校验源评分",version:"2 份"},
+        cases,
+        summary:scoreSummary(cases.flatMap(item=>item.rounds.flatMap(round=>round.assessments))),
+        reviews:scores.flatMap(({score})=>score.reviews),
+        limitations:[`合并展示；源评分 ${scores.map(({score})=>score.scoreReportId).join(" / ")}`],
+      };
+      scoreState.entries=[{scoreReportId:id,rubricVersion:evaluation.collection.rubricVersion,createdAt:new Date(evaluation.run.sealedAt).toISOString(),reviewed:scoreState.report.reviews.length>0}];
+      scoreState.selectedId=id; scoreState.message="10 个 Case 的源评分均已校验。"; render(state);
+    } catch(error) { if(session!==scoreSession) return; scoreState.message=error instanceof Error?error.message:"合并评分加载失败。"; render(state); }
   }
   async function loadScoreVersion(id) {
     if(state.adapter!=="offline") return;
@@ -1684,7 +1729,7 @@
     const options=[node("option","",scoreState.entries.length?"选择评分版本":"未加载")]; options[0].value="";
     for(const entry of scoreState.entries) { const option=node("option","",`${entry.rubricVersion} · ${entry.createdAt} · ${entry.reviewed?"含人工复核":"自动评分"} · ${entry.scoreReportId.slice(-8)}`); option.value=entry.scoreReportId; options.push(option); }
     if(select.dataset.versions!==JSON.stringify(scoreState.entries)) { select.replaceChildren(...options); select.dataset.versions=JSON.stringify(scoreState.entries); }
-    select.value=scoreState.selectedId; select.disabled=!binding || !scoreState.entries.length;
+    select.value=scoreState.selectedId; select.disabled=!binding || !scoreState.entries.length || Boolean(value.raw?.collection);
     element("score-status").textContent=binding?scoreState.message:"选择已封存评测后查看评分；实时执行和演示不显示历史评分。";
     const score=scoreState.report;
     const diagnostic=score?.rubric.definition.profile.purpose==="diagnostic";
@@ -2115,7 +2160,7 @@
   function parseHistoryIndex(value) {
     const index = object(value);
     if (index.schema !== "inbound-tour.report-history.v1" || !Array.isArray(index.reports)) throw new TypeError("Report history response is invalid.");
-    return index.reports.map((candidate) => {
+    const validateSource = (candidate) => {
       const entry = object(candidate);
       if (typeof entry.historyId !== "string" || !/^\d{8}T\d{9}Z--[A-Za-z0-9_-]+$/u.test(entry.historyId)
         || typeof entry.runId !== "string" || entry.runId.length === 0
@@ -2127,6 +2172,19 @@
         || !Number.isSafeInteger(entry.size) || entry.size < 0) {
         throw new TypeError("Report history entry is invalid.");
       }
+      return entry;
+    };
+    return index.reports.map((candidate) => {
+      const entry = object(candidate);
+      if (entry.components === undefined) return validateSource(entry);
+      if (typeof entry.historyId !== "string" || !/^\d{8}T\d{9}Z--[A-Za-z0-9_-]+$/u.test(entry.historyId)
+        || typeof entry.collectionId !== "string" || !/^(itinerary|hotel|scenic|ticket|transport)-top10-v10-image-\d{8}$/u.test(entry.collectionId)
+        || typeof entry.rubricVersion !== "string" || !/^\d{4}-\d{2}-\d{2}-answer-first-v10-image-delivery$/u.test(entry.rubricVersion)
+        || typeof entry.sealedAt !== "string" || !Number.isFinite(Date.parse(entry.sealedAt))
+        || !Array.isArray(entry.components) || entry.components.length !== 2) throw new TypeError("Report collection entry is invalid.");
+      entry.components = entry.components.map(validateSource);
+      if (new Set(entry.components.map(source => source.reportId)).size !== 2) throw new TypeError("Report collection contains duplicate sources.");
+      entry.size = entry.components.reduce((sum, source) => sum + source.size, 0);
       return entry;
     });
   }
@@ -2152,9 +2210,9 @@
       button.type = "button";
       button.dataset.historyId = entry.historyId;
       button.setAttribute("aria-current", String(entry.historyId === selectedHistoryId));
-      button.append(node("span", "history-name", (entry.displayName || historyName(entry.scenarioId))), node("span", "history-time", new Date(entry.sealedAt).toISOString()), node("span", "history-run", entry.runId));
+      button.append(node("span", "history-name", (entry.displayName || historyName(entry.scenarioId))), node("span", "history-time", new Date(entry.sealedAt).toISOString()), node("span", "history-run", entry.components ? `10 Case · 源 Run ${entry.components.map(source => source.runId).join(" / ")}` : entry.runId));
       if (entry.summary) button.append(node("span", "history-run", `${entry.summary.modes.includes("buyer-agent") ? "动态" : "固定"} · ${entry.summary.sourcePolicies.map(value => value === "source-faithful" ? "原题忠实" : "合成人设").join(" / ")} · ${entry.summary.caseCount} Case / ${entry.summary.actualRounds}轮 · 已终止 ${entry.summary.terminated} / 未完整 ${entry.summary.incomplete}`));
-      button.title = `${entry.scenarioId || "未命名评测"}\n${entry.reportId}`;
+      button.title = entry.components ? `合并展示 ${entry.collectionId}\n${entry.components.map(source => source.reportId).join("\n")}` : `${entry.scenarioId || "未命名评测"}\n${entry.reportId}`;
       if (entry.size > MAX_REPORT_BYTES) button.append(node("span", "history-run", "报告超过 128 MiB，请使用分片目录查看"));
       button.addEventListener("click", () => {
         if (entry.size > MAX_REPORT_BYTES) { historyMessage = "该报告超过 128 MiB，请使用分片目录查看。"; renderHistory(); return; }
@@ -2184,6 +2242,29 @@
     renderHistory();
   }
 
+  async function readHistorySource(entry, signal) {
+    const parts = entry.parts ?? [`${entry.historyId}.json.bin`];
+    const buffers = await Promise.all(parts.map(async part => {
+      const response = await fetch(`./${encodeURIComponent(part)}`, {
+        credentials: "same-origin",
+        headers: { accept: "application/octet-stream" },
+        signal,
+      });
+      if (!response.ok) throw new Error(`Report request failed with HTTP ${response.status}`);
+      return response.arrayBuffer();
+    }));
+    const compressedSize = buffers.reduce((sum, buffer) => sum + buffer.byteLength, 0);
+    if (compressedSize > MAX_REPORT_BYTES) throw new TypeError(`Selected report exceeds the ${MAX_REPORT_BYTES / 1024 / 1024} MiB limit.`);
+    const compressed = new Uint8Array(compressedSize);
+    let offset = 0;
+    for (const buffer of buffers) { compressed.set(new Uint8Array(buffer), offset); offset += buffer.byteLength; }
+    const content = await new Response(new Blob([compressed]).stream().pipeThrough(new DecompressionStream("gzip"))).text();
+    if (new TextEncoder().encode(content).byteLength !== entry.size || `sha256:${await contentHash(content)}` !== entry.digest) throw new TypeError("Report source digest does not match the history index.");
+    const report = await parseCanonicalReport(content);
+    if (report.reportId !== entry.reportId || report.runId !== entry.runId) throw new TypeError("Report source identity does not match the history index.");
+    return report;
+  }
+
   async function loadHistoryReport(historyId, selectFirstCase = false) {
     cancelReportLoad();
     const session = reportLoadSession;
@@ -2200,24 +2281,17 @@
     replace("conversation-thread", [empty("报告加载中，请稍候…")]);
     try {
       const entry = historyEntries.find(candidate => candidate.historyId === historyId);
-      const parts = entry?.parts ?? [`${historyId}.json.bin`];
-      const buffers = await Promise.all(parts.map(async part => {
-        const response = await fetch(`./${encodeURIComponent(part)}`, {
-          credentials: "same-origin",
-          headers: { accept: "application/octet-stream" },
-          signal: controller.signal,
-        });
-        if (!response.ok) throw new Error(`Report request failed with HTTP ${response.status}`);
-        return response.arrayBuffer();
-      }));
-      const compressedSize = buffers.reduce((sum, buffer) => sum + buffer.byteLength, 0);
-      if (compressedSize > MAX_REPORT_BYTES) throw new TypeError(`Selected report exceeds the ${MAX_REPORT_BYTES / 1024 / 1024} MiB limit.`);
-      const compressed = new Uint8Array(compressedSize);
-      let offset = 0;
-      for (const buffer of buffers) { compressed.set(new Uint8Array(buffer), offset); offset += buffer.byteLength; }
-      const content = await new Response(new Blob([compressed]).stream().pipeThrough(new DecompressionStream("gzip"))).text();
-      if (new TextEncoder().encode(content).byteLength > MAX_REPORT_BYTES) throw new TypeError(`Selected report exceeds the ${MAX_REPORT_BYTES / 1024 / 1024} MiB limit.`);
-      const report = await parseCanonicalReport(content);
+      if (!entry) throw new TypeError("Selected history entry is missing.");
+      const sources = entry.components ? await Promise.all(entry.components.map(source => readHistorySource(source, controller.signal))) : [await readHistorySource(entry, controller.signal)];
+      const report = entry.components ? {
+        schema: sources[0].schema,
+        reportId: `collection:${entry.collectionId}`,
+        runId: `collection:${entry.collectionId}`,
+        run: { scenarioId: entry.collectionId, phase: "functional", status: "completed", sealedAt: entry.sealedAt },
+        cases: sources.flatMap(source => source.cases),
+        collection: { rubricVersion: entry.rubricVersion, sources: sources.map((source, index) => ({ entry: entry.components[index], report: source })) },
+      } : sources[0];
+      if (entry.components && (report.cases.length !== 10 || new Set(report.cases.map(value => value.caseId)).size !== 10)) throw new TypeError("Report collection must contain 10 distinct cases.");
       if (session !== reportLoadSession) return;
       dispatch({ type: "offline-report", report });
       if (selectFirstCase && report.cases.length) dispatch({ type: "select-case", caseId: report.cases[0].caseId });
