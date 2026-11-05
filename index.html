@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; connect-src 'self'; font-src 'none'; form-action 'none'; frame-src 'none'; child-src 'none'; img-src https: http:; manifest-src 'none'; media-src 'none'; object-src 'none'; script-src 'sha256-2n2ASvC9rpGLFuNwKHqnYkGBFai/y0TMaFbl0+zB8wU='; style-src 'sha256-LuPjdnDn3EfqmDPK28Etj770jRoZ7E9FCQiDFplWO1g='; worker-src 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; connect-src 'self'; font-src 'none'; form-action 'none'; frame-src 'none'; child-src 'none'; img-src https: http:; manifest-src 'none'; media-src 'none'; object-src 'none'; script-src 'sha256-qBh7Nm2j/RHbiufTQAoS3qGFP5z1JD8lSZc5orb/wp0='; style-src 'sha256-LuPjdnDn3EfqmDPK28Etj770jRoZ7E9FCQiDFplWO1g='; worker-src 'none'">
   <title>Inbound Tour Evaluation Viewer / 多 Agent 评测监控</title>
   <style>
     * { box-sizing: border-box; }
@@ -2588,7 +2588,13 @@
     render(state);
     if (hostedViewer) {
       if (bundleMode) { await openHttpBundle(); return; }
-      if (historyOnly) { await refreshReportHistory(); return; }
+      if (historyOnly) {
+        element("run-status").textContent = "正在读取历史评测…";
+        await refreshReportHistory();
+        if (historyEntries.length) await loadHistoryReport(historyEntries[0].historyId, true);
+        else element("run-status").textContent = historyMessage;
+        return;
+      }
       if (boundRunId) {
         element("run-status").textContent = "正在查找本次评测报告…";
         await refreshReportHistory();
