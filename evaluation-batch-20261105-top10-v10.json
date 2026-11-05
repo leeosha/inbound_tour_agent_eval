@@ -1,0 +1,190 @@
+{
+  "schema": "inbound-tour.published-evaluation-batch.v1",
+  "title": "五行业 Top 10 · 新版 answer-first V10",
+  "sourceCodeCommit": "8061c9550267cc9e174c415e66fb25a345cc3adf",
+  "rubricVersion": "2026-11-05-answer-first-v10-image-delivery",
+  "scope": "server-only",
+  "judge": "gpt-5.5",
+  "sourcePolicy": "Top 1–5 reuse 2026-11-04 sealed Agent replies and rescore with current rubric; Top 6–10 execute on 2026-11-05 and score with current rubric",
+  "industries": [
+    {
+      "industry": "itinerary",
+      "sourceSuite": "itinerary-b1",
+      "sourceSha256": "sha256:5ccaaae4459f251629d894abcea9416323db69a9def6b3284f4d1919cee34bba",
+      "caseIds": [
+        "itinerary-b1-q-0001",
+        "itinerary-b1-q-0002",
+        "itinerary-b1-q-0003",
+        "itinerary-b1-q-0004",
+        "itinerary-b1-q-0005",
+        "itinerary-b1-q-0006",
+        "itinerary-b1-q-0007",
+        "itinerary-b1-q-0008",
+        "itinerary-b1-q-0009",
+        "itinerary-b1-q-0010"
+      ],
+      "top1to5": {
+        "runId": "run:ef9131a55a7ce428119334f6ad4f8393",
+        "reportId": "evaluation-report:c46610be088787b50d5c4b868e1c60389bc101fa47a7dbed1a344c3101e9db2e",
+        "scoreReportId": "score-report:39cff2bab44cabafef7644f92618a2c08553baf82d791c3e53ee3f179d3d4850",
+        "scoreCoverage": 1,
+        "scoreStatus": "completed",
+        "replyGeneratedAt": "2026-11-04"
+      },
+      "top6to10": {
+        "runId": "run:a5dec3ccd26e799c4063bc97d82f2f0c",
+        "reportId": "evaluation-report:5fc48230071230b95806be3559692c3cc0772fd7b155c213aa7867cd3a296a5a",
+        "scoreReportId": "score-report:ec57911d72a6e2ce83792c0356583688d003eda9df137ebe2f11c802be15871e",
+        "scoreCoverage": 0.8,
+        "scoreStatus": "awaiting-review",
+        "functionalStatus": "completed",
+        "technicalCheckStatus": "failed",
+        "noFinalReplyCaseIds": [
+          "itinerary-b1-q-0009"
+        ]
+      }
+    },
+    {
+      "industry": "hotel",
+      "sourceSuite": "hotel-pilot",
+      "sourceSha256": "sha256:5dc7ff60f2fa0f9b6bae28418ee3ec512386b242120845d820294d1e87cd622b",
+      "caseIds": [
+        "hotel-pilot-q-0001",
+        "hotel-pilot-q-0002",
+        "hotel-pilot-q-0003",
+        "hotel-pilot-q-0004",
+        "hotel-pilot-q-0005",
+        "hotel-pilot-q-0006",
+        "hotel-pilot-q-0007",
+        "hotel-pilot-q-0008",
+        "hotel-pilot-q-0009",
+        "hotel-pilot-q-0010"
+      ],
+      "top1to5": {
+        "runId": "run:4a65e02ab563b4393966464a9591e36d",
+        "reportId": "evaluation-report:72547038f6948590767edaae4fdbbe5a6d7bfaf24229305c66a6c8a7d2cc54ec",
+        "scoreReportId": "score-report:9e730a632bc8f59eb5e1bca3d54bd28b0a741981dcb2cf4b005e46ee3a100e1e",
+        "scoreCoverage": 1,
+        "scoreStatus": "completed",
+        "replyGeneratedAt": "2026-11-04"
+      },
+      "top6to10": {
+        "runId": "run:e491887be62d0622eda1a4b06dd4815b",
+        "reportId": "evaluation-report:f37dbad4b39864f2537da683d1b7b9e58880d6f1ab404b732831c4ebf7e9ecee",
+        "scoreReportId": "score-report:c0838804bd0531d0a556d413b9bd6f05dcff81cbc017975fbaf73ee80e820690",
+        "scoreCoverage": 1,
+        "scoreStatus": "completed",
+        "functionalStatus": "completed",
+        "technicalCheckStatus": "passed",
+        "noFinalReplyCaseIds": []
+      }
+    },
+    {
+      "industry": "scenic",
+      "sourceSuite": "scenic-b1",
+      "sourceSha256": "sha256:ea1db70f5657c0a1336989903dd1a336a14b59be99df0e795b75b7a919f0af11",
+      "caseIds": [
+        "scenic-b1-q-0001",
+        "scenic-b1-q-0002",
+        "scenic-b1-q-0003",
+        "scenic-b1-q-0004",
+        "scenic-b1-q-0005",
+        "scenic-b1-q-0006",
+        "scenic-b1-q-0007",
+        "scenic-b1-q-0008",
+        "scenic-b1-q-0009",
+        "scenic-b1-q-0010"
+      ],
+      "top1to5": {
+        "runId": "run:c5a6eec29d8ecbc1bc4734c98fb4aab8",
+        "reportId": "evaluation-report:d49ba1394ed8caf47f6b19a4569400522f0358038c80db95f7700594b984bdc2",
+        "scoreReportId": "score-report:29228083860d5a3271075316cd0c626cac583025159fdc6082707b2c3109fdf0",
+        "scoreCoverage": 1,
+        "scoreStatus": "completed",
+        "replyGeneratedAt": "2026-11-04"
+      },
+      "top6to10": {
+        "runId": "run:0a9e5dd505811aa1cb187ce0bbfa8d63",
+        "reportId": "evaluation-report:23f174cce544e75d84ee3910f73be4bde860e1618a2b7660de9f837219bc4ac0",
+        "scoreReportId": "score-report:1e9d2ebfd0280b8e7536ff5adb7ea97e6d715d5903f9c8c9ba2da9a2ed0b669b",
+        "scoreCoverage": 1,
+        "scoreStatus": "completed",
+        "functionalStatus": "completed",
+        "technicalCheckStatus": "passed",
+        "noFinalReplyCaseIds": []
+      }
+    },
+    {
+      "industry": "ticket",
+      "sourceSuite": "ticket-b1",
+      "sourceSha256": "sha256:95360c247292280c1297a96e7361fc4bb795a09836769ce33b3a239b73e11845",
+      "caseIds": [
+        "ticket-b1-q-0001",
+        "ticket-b1-q-0002",
+        "ticket-b1-q-0003",
+        "ticket-b1-q-0004",
+        "ticket-b1-q-0005",
+        "ticket-b1-q-0006",
+        "ticket-b1-q-0007",
+        "ticket-b1-q-0008",
+        "ticket-b1-q-0009",
+        "ticket-b1-q-0010"
+      ],
+      "top1to5": {
+        "runId": "run:ee776cfbb7540eeaf0c209882b182c2d",
+        "reportId": "evaluation-report:91b33754ce73a12d05774a9b8f4daa10b6112e3fdfa5fc89359fb2c5da72a01c",
+        "scoreReportId": "score-report:da1295f4b69f5b6c53f468092490e90be2f6e9c5ac38a0a71e766e029c7e97bf",
+        "scoreCoverage": 1,
+        "scoreStatus": "completed",
+        "replyGeneratedAt": "2026-11-04"
+      },
+      "top6to10": {
+        "runId": "run:2f451968cb47a5962b2249ea01454ca7",
+        "reportId": "evaluation-report:416475380aaf22c34e9ec094744073de6d82fb6856191afe58a8a5188224fb59",
+        "scoreReportId": "score-report:1c8a20373e1b412623841958be7cc7664b9c702eb83d36feed41e547d85a519d",
+        "scoreCoverage": 1,
+        "scoreStatus": "completed",
+        "functionalStatus": "completed",
+        "technicalCheckStatus": "passed",
+        "noFinalReplyCaseIds": []
+      }
+    },
+    {
+      "industry": "transport",
+      "sourceSuite": "transport-b1",
+      "sourceSha256": "sha256:cc34ff2a41f122a2456db2bf29221dfc2856435b3fe64ef3da4cba2b0d41f8d7",
+      "caseIds": [
+        "transport-b1-q-0001",
+        "transport-b1-q-0002",
+        "transport-b1-q-0003",
+        "transport-b1-q-0004",
+        "transport-b1-q-0005",
+        "transport-b1-q-0006",
+        "transport-b1-q-0007",
+        "transport-b1-q-0008",
+        "transport-b1-q-0009",
+        "transport-b1-q-0010"
+      ],
+      "top1to5": {
+        "runId": "run:8f5a10dcd47edc84a23eb3e653b36664",
+        "reportId": "evaluation-report:65ce19834b3655fd9bb369f8955deb16042597b9ff6b254034081b2a1f287d83",
+        "scoreReportId": "score-report:d9a9eb831d51ed524303ae73b8f33d520dca74aeece66d0f1276a0f04767365b",
+        "scoreCoverage": 1,
+        "scoreStatus": "completed",
+        "replyGeneratedAt": "2026-11-04"
+      },
+      "top6to10": {
+        "runId": "run:913713dd210b3d0e5072717eff193fa1",
+        "reportId": "evaluation-report:bb57d0a608b91424ac601e85626f8029da29c2222555f6c4aa19622f2886f635",
+        "scoreReportId": "score-report:7609a2d1358128246b425652ab914f70b1a4091d1b1dcca57afe2309105a9945",
+        "scoreCoverage": 0.8,
+        "scoreStatus": "awaiting-review",
+        "functionalStatus": "completed",
+        "technicalCheckStatus": "passed",
+        "noFinalReplyCaseIds": [
+          "transport-b1-q-0006"
+        ]
+      }
+    }
+  ]
+}

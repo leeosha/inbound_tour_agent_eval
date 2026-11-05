@@ -2123,6 +2123,7 @@
         || typeof entry.reportId !== "string" || !/^evaluation-report:[a-f0-9]{64}$/u.test(entry.reportId)
         || typeof entry.sealedAt !== "string" || !Number.isFinite(Date.parse(entry.sealedAt))
         || typeof entry.digest !== "string" || !/^sha256:[a-f0-9]{64}$/u.test(entry.digest)
+        || (entry.parts !== undefined && (!Array.isArray(entry.parts) || !entry.parts.length || entry.parts.some(part => typeof part !== "string" || !/^\d{8}T\d{9}Z--[A-Za-z0-9_-]+\.json\.bin\.part\d{2}$/u.test(part))))
         || !Number.isSafeInteger(entry.size) || entry.size < 0) {
         throw new TypeError("Report history entry is invalid.");
       }
@@ -2198,15 +2199,23 @@
     element("conversation-status").textContent = "正在读取游客问题与 Agent 回复";
     replace("conversation-thread", [empty("报告加载中，请稍候…")]);
     try {
-      const response = await fetch(`./${encodeURIComponent(historyId)}.json.bin`, {
-        credentials: "same-origin",
-        headers: { accept: "application/vnd.inbound-tour.evaluation-report+json;version=1" },
-        signal: controller.signal,
-      });
-      if (!response.ok) throw new Error(`Report request failed with HTTP ${response.status}`);
-      const declaredSize = Number(response.headers.get("content-length"));
-      if (Number.isFinite(declaredSize) && declaredSize > MAX_REPORT_BYTES) throw new TypeError(`Selected report exceeds the ${MAX_REPORT_BYTES / 1024 / 1024} MiB limit.`);
-      const content = await new Response(response.body.pipeThrough(new DecompressionStream("gzip"))).text();
+      const entry = historyEntries.find(candidate => candidate.historyId === historyId);
+      const parts = entry?.parts ?? [`${historyId}.json.bin`];
+      const buffers = await Promise.all(parts.map(async part => {
+        const response = await fetch(`./${encodeURIComponent(part)}`, {
+          credentials: "same-origin",
+          headers: { accept: "application/octet-stream" },
+          signal: controller.signal,
+        });
+        if (!response.ok) throw new Error(`Report request failed with HTTP ${response.status}`);
+        return response.arrayBuffer();
+      }));
+      const compressedSize = buffers.reduce((sum, buffer) => sum + buffer.byteLength, 0);
+      if (compressedSize > MAX_REPORT_BYTES) throw new TypeError(`Selected report exceeds the ${MAX_REPORT_BYTES / 1024 / 1024} MiB limit.`);
+      const compressed = new Uint8Array(compressedSize);
+      let offset = 0;
+      for (const buffer of buffers) { compressed.set(new Uint8Array(buffer), offset); offset += buffer.byteLength; }
+      const content = await new Response(new Blob([compressed]).stream().pipeThrough(new DecompressionStream("gzip"))).text();
       if (new TextEncoder().encode(content).byteLength > MAX_REPORT_BYTES) throw new TypeError(`Selected report exceeds the ${MAX_REPORT_BYTES / 1024 / 1024} MiB limit.`);
       const report = await parseCanonicalReport(content);
       if (session !== reportLoadSession) return;
