@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; connect-src 'self'; font-src 'none'; form-action 'none'; frame-src 'none'; child-src 'none'; img-src https: http:; manifest-src 'none'; media-src 'none'; object-src 'none'; script-src 'sha256-bkmZgj+z9YtzN06UzHJnTNveQXc0JwgyhGi7YeSMIU4='; style-src 'sha256-LuPjdnDn3EfqmDPK28Etj770jRoZ7E9FCQiDFplWO1g='; worker-src 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; connect-src 'self'; font-src 'none'; form-action 'none'; frame-src 'none'; child-src 'none'; img-src https: http:; manifest-src 'none'; media-src 'none'; object-src 'none'; script-src 'sha256-EQSGAeKXyXOZJQ9rsqZXhigQpzKxu1qCSkW2LzuZuG8='; style-src 'sha256-LuPjdnDn3EfqmDPK28Etj770jRoZ7E9FCQiDFplWO1g='; worker-src 'none'">
   <title>Inbound Tour Evaluation Viewer / 多 Agent 评测监控</title>
   <style>
     * { box-sizing: border-box; }
@@ -1610,7 +1610,7 @@
             }
             if (a.status==="assessed") {
               requireScore(a.citations.some(v=>v.pointer.startsWith(`/cases/${ci}/rounds/${ri}/`)), "缺少本轮证据。");
-              if (rule.evidence==="public-evidence") requireScore(a.citations.some(v=>/\/(tools|publicToolResults|evidence)\//.test(v.pointer)) || score.judge?.promptVersion==="inbound-tour.judge.v4" && a.score===0 && a.labels.includes("unsupported-factual-claim") && a.citations.some(v=>v.pointer===`/cases/${ci}/rounds/${ri}/conversation/assistant/text` || v.pointer.startsWith(`/cases/${ci}/rounds/${ri}/publicPresentation/value/`)), "准确性评分缺少公开源证据。");
+              if (rule.evidence==="public-evidence") requireScore(a.citations.some(v=>/\/(tools|publicToolResults|evidence)\//.test(v.pointer)) || a.score===0 && a.labels.includes("unsupported-factual-claim") && a.citations.some(v=>v.pointer===`/cases/${ci}/rounds/${ri}/conversation/assistant/text` || v.pointer.startsWith(`/cases/${ci}/rounds/${ri}/publicPresentation/value/`)), "准确性评分缺少公开源证据。");
             }
           }
         }
@@ -1673,7 +1673,7 @@
       const cases=scores.flatMap(({score},sourceIndex)=>score.cases.map(original=>{
         const item=structuredClone(original);
         for(const round of item.rounds) for(const assessment of [...round.assessments,...round.automaticAssessments]) for(const citation of assessment.citations) {
-          citation.pointer=citation.pointer.replace(/^\/cases\/(\d+)(?=\/|$)/u,(_,index)=>`/cases/${Number(index)+sourceIndex*5}`);
+          citation.pointer=citation.pointer.replace(/^\/cases\/(\d+)(?=\/|$)/u,(_,index)=>`/cases/${Number(index)+scores.slice(0,sourceIndex).reduce((count,source)=>count+source.score.cases.length,0)}`);
         }
         return item;
       }));
