@@ -1,1 +1,283 @@
-{"schema":"inbound-tour.report-history.v1","reports":[{"historyId":"20261105T145412283Z--cnVuOjM4MzRlMTU3OGNlMDMxZGNjNjNiMzQwMTkyNTI5YTk2","collectionId":"itinerary-top10-v10-image-20261105","sealedAt":"2026-11-05T14:54:12.283Z","rubricVersion":"2026-11-05-answer-first-v10-image-delivery","displayName":"行程规划 Top 10 · 生产接口 · answer-first V10 · 2026-11-05","components":[{"digest":"sha256:b4bca3218b32b147433250e49c38ce1897bdce037378ae8adbf58784101a635d","historyId":"20261105T142433895Z--cnVuOjVjZmNkZmJkMmZmNDhiMjhiNmVmNzhjYzQ2NTU4ODA4","reportId":"evaluation-report:b0edf786312799371ecb9e341fc24566db54f20668c429bab06a0843ff139f33","runId":"run:5cfcdfbd2ff48b28b6ef78cc46558808","scenarioId":"itinerary-top10-production-20261105-pilot","sealedAt":"2026-11-05T14:24:33.895Z","size":3796816,"displayName":"行程规划 Top 1 · 生产接口","parts":["20261105T142433895Z--cnVuOjVjZmNkZmJkMmZmNDhiMjhiNmVmNzhjYzQ2NTU4ODA4.json.bin.part00","20261105T142433895Z--cnVuOjVjZmNkZmJkMmZmNDhiMjhiNmVmNzhjYzQ2NTU4ODA4.json.bin.part01"]},{"digest":"sha256:529a35edb0cd592f08cde618849b21e3972506e7f43303384c4537fc53358bfe","historyId":"20261105T145412283Z--cnVuOjM4MzRlMTU3OGNlMDMxZGNjNjNiMzQwMTkyNTI5YTk2","reportId":"evaluation-report:a7072e9f858ac57f82b89658e80d4332eb14de5b2dfe5eddf5d2887291e76f16","runId":"run:3834e1578ce031dcc63b340192529a96","scenarioId":"itinerary-top10-production-20261105-rest","sealedAt":"2026-11-05T14:54:12.283Z","size":48484692,"displayName":"行程规划 Top 2–10 · 生产接口","parts":["20261105T145412283Z--cnVuOjM4MzRlMTU3OGNlMDMxZGNjNjNiMzQwMTkyNTI5YTk2.json.bin.part00","20261105T145412283Z--cnVuOjM4MzRlMTU3OGNlMDMxZGNjNjNiMzQwMTkyNTI5YTk2.json.bin.part01","20261105T145412283Z--cnVuOjM4MzRlMTU3OGNlMDMxZGNjNjNiMzQwMTkyNTI5YTk2.json.bin.part02","20261105T145412283Z--cnVuOjM4MzRlMTU3OGNlMDMxZGNjNjNiMzQwMTkyNTI5YTk2.json.bin.part03","20261105T145412283Z--cnVuOjM4MzRlMTU3OGNlMDMxZGNjNjNiMzQwMTkyNTI5YTk2.json.bin.part04","20261105T145412283Z--cnVuOjM4MzRlMTU3OGNlMDMxZGNjNjNiMzQwMTkyNTI5YTk2.json.bin.part05","20261105T145412283Z--cnVuOjM4MzRlMTU3OGNlMDMxZGNjNjNiMzQwMTkyNTI5YTk2.json.bin.part06","20261105T145412283Z--cnVuOjM4MzRlMTU3OGNlMDMxZGNjNjNiMzQwMTkyNTI5YTk2.json.bin.part07","20261105T145412283Z--cnVuOjM4MzRlMTU3OGNlMDMxZGNjNjNiMzQwMTkyNTI5YTk2.json.bin.part08","20261105T145412283Z--cnVuOjM4MzRlMTU3OGNlMDMxZGNjNjNiMzQwMTkyNTI5YTk2.json.bin.part09","20261105T145412283Z--cnVuOjM4MzRlMTU3OGNlMDMxZGNjNjNiMzQwMTkyNTI5YTk2.json.bin.part10","20261105T145412283Z--cnVuOjM4MzRlMTU3OGNlMDMxZGNjNjNiMzQwMTkyNTI5YTk2.json.bin.part11"]}]},{"historyId":"20261105T141214074Z--cnVuOmUwMDk2OTYyYjBlZWY4MTI0YjU4ZTM5NDZmZjZlZDM3","collectionId":"scenic-top10-v10-image-20261105","sealedAt":"2026-11-05T14:12:14.074Z","rubricVersion":"2026-11-05-answer-first-v10-image-delivery","displayName":"景点 Top 10 · 生产接口 · answer-first V10 · 2026-11-05","components":[{"digest":"sha256:525f825ddbb3ad9b4d7e6be6d899572fca5fa3695ebffc74799ec6b1cf6e9dd1","historyId":"20261105T134856473Z--cnVuOmY3NjRmZWMwMDI4ZjMyOTFiYmYxNzU5Y2Q5MDM4MDdl","reportId":"evaluation-report:d60cbae30c8ed96a5c4fc3f66b36d25b9ec3d9501c336ed30a67c7a906f19aed","runId":"run:f764fec0028f3291bbf1759cd903807e","scenarioId":"scenic-top10-production-20261105-pilot","sealedAt":"2026-11-05T13:48:56.473Z","size":3198216,"displayName":"景点 Top 1 · 生产接口"},{"digest":"sha256:efed1dfecf9755d035314e5529ad1ced7aac3c23f991294f17b8f0408f6a6aaa","historyId":"20261105T141214074Z--cnVuOmUwMDk2OTYyYjBlZWY4MTI0YjU4ZTM5NDZmZjZlZDM3","reportId":"evaluation-report:e1dacade4627a2482be0cd79eb17db57826ad29a9f5b3c35b75a9174d2624045","runId":"run:e0096962b0eef8124b58e3946ff6ed37","scenarioId":"scenic-top10-production-20261105-rest","sealedAt":"2026-11-05T14:12:14.074Z","size":23181452,"displayName":"景点 Top 2–10 · 生产接口","parts":["20261105T141214074Z--cnVuOmUwMDk2OTYyYjBlZWY4MTI0YjU4ZTM5NDZmZjZlZDM3.json.bin.part00","20261105T141214074Z--cnVuOmUwMDk2OTYyYjBlZWY4MTI0YjU4ZTM5NDZmZjZlZDM3.json.bin.part01","20261105T141214074Z--cnVuOmUwMDk2OTYyYjBlZWY4MTI0YjU4ZTM5NDZmZjZlZDM3.json.bin.part02","20261105T141214074Z--cnVuOmUwMDk2OTYyYjBlZWY4MTI0YjU4ZTM5NDZmZjZlZDM3.json.bin.part03","20261105T141214074Z--cnVuOmUwMDk2OTYyYjBlZWY4MTI0YjU4ZTM5NDZmZjZlZDM3.json.bin.part04","20261105T141214074Z--cnVuOmUwMDk2OTYyYjBlZWY4MTI0YjU4ZTM5NDZmZjZlZDM3.json.bin.part05"]}]},{"historyId":"20261105T133208267Z--cnVuOjNjOTEwMjEyNWUxM2FkMzQ3MjFiNGJiNTMyY2Y5OGJh","collectionId":"transport-top10-v10-image-20261105","sealedAt":"2026-11-05T13:32:08.267Z","rubricVersion":"2026-11-05-answer-first-v10-image-delivery","displayName":"交通 Top 10 · 生产接口 · answer-first V10 · 2026-11-05","components":[{"digest":"sha256:d61f5ef81c5f1013925318d54c2ed9a9521eec5cc352789e19b840b8c6dae1ad","historyId":"20261105T122610940Z--cnVuOjZjYzUxMmMzYjU3NWQ5ODU1ZjYyYjc5ZTllYjExNDM2","reportId":"evaluation-report:d6254d4a70a57a0a002d83a9d04d693cac0b75602e438018bc4fb6dd6d67f163","runId":"run:6cc512c3b575d9855f62b79e9eb11436","scenarioId":"transport-top10-production-20261105-pilot","sealedAt":"2026-11-05T12:26:10.940Z","size":2673476,"displayName":"交通 Top 1 · 生产接口"},{"digest":"sha256:06ad99b3fb9840d0cc4aa0bced00eb40f172b2445900593e15b07111799301e3","historyId":"20261105T133208267Z--cnVuOjNjOTEwMjEyNWUxM2FkMzQ3MjFiNGJiNTMyY2Y5OGJh","reportId":"evaluation-report:18e8a994056843d72bc19136882b178c843b46fcbf0df18c4f1ea6dded950420","runId":"run:3c9102125e13ad34721b4bb532cf98ba","scenarioId":"transport-top10-production-20261105-rest","sealedAt":"2026-11-05T13:32:08.267Z","size":34740416,"displayName":"交通 Top 2–10 · 生产接口","parts":["20261105T133208267Z--cnVuOjNjOTEwMjEyNWUxM2FkMzQ3MjFiNGJiNTMyY2Y5OGJh.json.bin.part00","20261105T133208267Z--cnVuOjNjOTEwMjEyNWUxM2FkMzQ3MjFiNGJiNTMyY2Y5OGJh.json.bin.part01","20261105T133208267Z--cnVuOjNjOTEwMjEyNWUxM2FkMzQ3MjFiNGJiNTMyY2Y5OGJh.json.bin.part02","20261105T133208267Z--cnVuOjNjOTEwMjEyNWUxM2FkMzQ3MjFiNGJiNTMyY2Y5OGJh.json.bin.part03","20261105T133208267Z--cnVuOjNjOTEwMjEyNWUxM2FkMzQ3MjFiNGJiNTMyY2Y5OGJh.json.bin.part04","20261105T133208267Z--cnVuOjNjOTEwMjEyNWUxM2FkMzQ3MjFiNGJiNTMyY2Y5OGJh.json.bin.part05"]}]},{"historyId":"20261105T125947260Z--cnVuOmUwZjRmMTVmMWQ0ZDBiZDUxNjdmNDE4Mjk4YmZmNzhi","collectionId":"hotel-top10-v10-image-20261105","sealedAt":"2026-11-05T12:59:47.260Z","rubricVersion":"2026-11-05-answer-first-v10-image-delivery","displayName":"酒店 Top 10 · 生产接口 · answer-first V10 · 2026-11-05","components":[{"digest":"sha256:712295f7add3ce494e61f0248a38415e91d6850f9ab312d8914b5e124fee7cb7","historyId":"20261105T122345637Z--cnVuOjgwMGNkMGY1MGJjNDY3ZTllNWE5NTQ2ZDg0YmM4OTA2","reportId":"evaluation-report:e3ac9bfa7b08cc47b02d02d0e11ccad8faee73ff7935a8de1d1da00afdfe0e8c","runId":"run:800cd0f50bc467e9e5a9546d84bc8906","scenarioId":"hotel-top10-production-20261105-pilot","sealedAt":"2026-11-05T12:23:45.637Z","size":2320154,"displayName":"酒店 Top 1 · 生产接口"},{"digest":"sha256:2cbd76c9015649432232fd5a34be8dad5d767a87a1eb74f7dd4609a7bc3921c8","historyId":"20261105T125947260Z--cnVuOmUwZjRmMTVmMWQ0ZDBiZDUxNjdmNDE4Mjk4YmZmNzhi","reportId":"evaluation-report:41512e24f3874a0339ff0648d53bc711ba61f2b04c0e05e477b73f931498f187","runId":"run:e0f4f15f1d4d0bd5167f418298bff78b","scenarioId":"hotel-top10-production-20261105-rest","sealedAt":"2026-11-05T12:59:47.260Z","size":26895473,"displayName":"酒店 Top 2–10 · 生产接口","parts":["20261105T125947260Z--cnVuOmUwZjRmMTVmMWQ0ZDBiZDUxNjdmNDE4Mjk4YmZmNzhi.json.bin.part00","20261105T125947260Z--cnVuOmUwZjRmMTVmMWQ0ZDBiZDUxNjdmNDE4Mjk4YmZmNzhi.json.bin.part01","20261105T125947260Z--cnVuOmUwZjRmMTVmMWQ0ZDBiZDUxNjdmNDE4Mjk4YmZmNzhi.json.bin.part02","20261105T125947260Z--cnVuOmUwZjRmMTVmMWQ0ZDBiZDUxNjdmNDE4Mjk4YmZmNzhi.json.bin.part03","20261105T125947260Z--cnVuOmUwZjRmMTVmMWQ0ZDBiZDUxNjdmNDE4Mjk4YmZmNzhi.json.bin.part04","20261105T125947260Z--cnVuOmUwZjRmMTVmMWQ0ZDBiZDUxNjdmNDE4Mjk4YmZmNzhi.json.bin.part05","20261105T125947260Z--cnVuOmUwZjRmMTVmMWQ0ZDBiZDUxNjdmNDE4Mjk4YmZmNzhi.json.bin.part06"]}]},{"historyId":"20261105T124048404Z--cnVuOjgwZDQ0NjM5ZTU2NWY0MmY2MWQ0N2JkYTQ3OGU2MzY0","collectionId":"ticket-top10-v10-image-20261105","sealedAt":"2026-11-05T12:40:48.404Z","rubricVersion":"2026-11-05-answer-first-v10-image-delivery","displayName":"门票 Top 10 · 生产接口 · answer-first V10 · 2026-11-05","components":[{"digest":"sha256:5cc08f279da2f6b181b5f26ecf6bc0acc8557cb0626c6f83ab0bf88583d9f357","historyId":"20261105T122145158Z--cnVuOjQzYjZhNWZmMTA1ODRjNTJhZWYyMjY3Nzg5NGRhNzI1","reportId":"evaluation-report:56c645ff451a247d0d269a8a8b865dfd8aeea6c2cbb5420139eb52a3a8c8701a","runId":"run:43b6a5ff10584c52aef22677894da725","scenarioId":"ticket-top10-production-20261105-pilot","sealedAt":"2026-11-05T12:21:45.158Z","size":1009478,"displayName":"门票 Top 1 · 生产接口"},{"digest":"sha256:23ab4295399fe3df7293d492746bb6fd317743bdc2f66cd2d299bf8031dcd36f","historyId":"20261105T124048404Z--cnVuOjgwZDQ0NjM5ZTU2NWY0MmY2MWQ0N2JkYTQ3OGU2MzY0","reportId":"evaluation-report:1154e939a344d38bd1b442c97ebe7954119e41683d8cfd8780a34cace1c059f1","runId":"run:80d44639e565f42f61d47bda478e6364","scenarioId":"ticket-top10-production-20261105-rest","sealedAt":"2026-11-05T12:40:48.404Z","size":14774981,"displayName":"门票 Top 2–10 · 生产接口","parts":["20261105T124048404Z--cnVuOjgwZDQ0NjM5ZTU2NWY0MmY2MWQ0N2JkYTQ3OGU2MzY0.json.bin.part00","20261105T124048404Z--cnVuOjgwZDQ0NjM5ZTU2NWY0MmY2MWQ0N2JkYTQ3OGU2MzY0.json.bin.part01","20261105T124048404Z--cnVuOjgwZDQ0NjM5ZTU2NWY0MmY2MWQ0N2JkYTQ3OGU2MzY0.json.bin.part02","20261105T124048404Z--cnVuOjgwZDQ0NjM5ZTU2NWY0MmY2MWQ0N2JkYTQ3OGU2MzY0.json.bin.part03"]}]},{"digest":"sha256:921fab421634913f6c9e362d170dc2c94449c6e678f49fdc87502f14d79a5180","historyId":"20261103T044601843Z--cnVuOmRhNzBmMjE2Y2U2OTk5ZDExZTQzNTM2ZGU2MGRkYWU4","reportId":"evaluation-report:5ced9126ba77a7370c3af74ca70dc8a83d2f23c0d15d5c599a173864df068952","runId":"run:da70f216ce6999d11e43536de60ddae8","scenarioId":"transport-top5-v10-20261103","sealedAt":"2026-11-03T04:46:01.843Z","size":8947642,"displayName":"交通 Top 5 · 行程规划只出具体poi，其他非纯模糊query先答后澄清"},{"digest":"sha256:53f14b8edaa7107c345deaab7f1dd12f2f6c43ddcff3501308430e782d1e12fb","historyId":"20261103T043856932Z--cnVuOjMzYTQ4MGFkNzM3OTRhZmJhZTgxYzk0YzQ4NTlmOTU5","reportId":"evaluation-report:126d4cf3c1278ec569e414ca1cd06a96229cea49af6a80313b2557d5a62cd677","runId":"run:33a480ad73794afbae81c94c4859f959","scenarioId":"ticket-top5-v10-20261103","sealedAt":"2026-11-03T04:38:56.932Z","size":3427526,"displayName":"门票 Top 5 · 行程规划只出具体poi，其他非纯模糊query先答后澄清"},{"digest":"sha256:2b63178c0cf6131929d7f59e2f08e6704e8980cb60a13242d76c70a6a3efc2c8","historyId":"20261103T043250954Z--cnVuOmVlZmU3ZjZhMzZlMTM1ZjExM2FmZjUxMGYyNDhlMzNj","reportId":"evaluation-report:d1ce15c9fe127b13718c331dbd36aeac828b199b7bce259493fed1a63fb45e54","runId":"run:eefe7f6a36e135f113aff510f248e33c","scenarioId":"scenic-top5-v10-20261103","sealedAt":"2026-11-03T04:32:50.954Z","size":9006552,"displayName":"景点 Top 5 · 行程规划只出具体poi，其他非纯模糊query先答后澄清"},{"digest":"sha256:2f473529c45dc908af572d7bcae000fa481a921040fbe858c1dd9b9bc1b947d6","historyId":"20261103T042239970Z--cnVuOmQ1MDgwN2JmZGU4ZTQ2ZGJhNjZlMzY2YjExZTk1ZmRm","reportId":"evaluation-report:d55702f5866008358fbabc6ee3e35ac2a717e241f1e9cdd324d1903282cdee88","runId":"run:d50807bfde8e46dba66e366b11e95fdf","scenarioId":"hotel-top5-v10-20261103","sealedAt":"2026-11-03T04:22:39.970Z","size":7764748,"displayName":"酒店 Top 5 · 行程规划只出具体poi，其他非纯模糊query先答后澄清"},{"digest":"sha256:941b11a4cc6cbe3c399b35ff54f7d5dcadd892d3bb3abd044e971e843259ddba","historyId":"20261103T041200614Z--cnVuOjQwMDE3YzUzNjhhMTJkN2IwMTIxMGNmYzMzYmU0ZDIx","reportId":"evaluation-report:af34ac47d9b1e50f256e3ce1cad1dab7c270873d4568f7e9aedeff5ec9203758","runId":"run:40017c5368a12d7b01210cfc33be4d21","scenarioId":"itinerary-top5-v10-20261103","sealedAt":"2026-11-03T04:12:00.614Z","size":15070387,"displayName":"行程规划 Top 5 · 行程规划只出具体poi，其他非纯模糊query先答后澄清"}]}
+{
+  "schema": "inbound-tour.report-history.v1",
+  "reports": [
+    {
+      "historyId": "20261106T040628001Z--cnVuOjYxMjQ2MDYxZjlmZWMyOGZhMWI3NjgxZjQzYThjMjIx",
+      "collectionId": "ticket-top10-v10-image-20261106",
+      "sealedAt": "2026-11-06T04:06:28.001Z",
+      "rubricVersion": "2026-11-05-answer-first-v10-image-delivery",
+      "displayName": "门票 Top 10 · 生产接口重新评测 · answer-first V10 · 2026-11-06",
+      "components": [
+        {
+          "digest": "sha256:1cae0df9d0999d0f47f2aa4e47f4a1ab236c108a19458dd5e15ccabdb6666769",
+          "historyId": "20261106T035305089Z--cnVuOjIxZDFjM2YxZmQxZmY2MDg2YjM3NTNjM2UxZjdmM2Q3",
+          "reportId": "evaluation-report:45ace783044994916438ea86f7e80c4d26a6f23a61f1f8c7cb995e1f654f2d28",
+          "runId": "run:21d1c3f1fd1ff6086b3753c3e1f7f3d7",
+          "scenarioId": "ticket-top10-production-rerun-20261106-pilot",
+          "sealedAt": "2026-11-06T03:53:05.089Z",
+          "size": 4024048,
+          "displayName": "门票 Top 1–3 · 生产接口重评"
+        },
+        {
+          "digest": "sha256:5dc8b0a7d46b16ffe5b5931a71b6a556658fe3b0dc39b12d05e1dca45c3885d6",
+          "historyId": "20261106T040628001Z--cnVuOjYxMjQ2MDYxZjlmZWMyOGZhMWI3NjgxZjQzYThjMjIx",
+          "reportId": "evaluation-report:223dd98c70c0491dc7db48dbe1731d2f9f74163870d3f6a017d3bed6df4423fe",
+          "runId": "run:61246061f9fec28fa1b7681f43a8c221",
+          "scenarioId": "ticket-top10-production-rerun-20261106-rest",
+          "sealedAt": "2026-11-06T04:06:28.001Z",
+          "size": 10833497,
+          "displayName": "门票 Top 4–10 · 生产接口重评",
+          "parts": [
+            "20261106T040628001Z--cnVuOjYxMjQ2MDYxZjlmZWMyOGZhMWI3NjgxZjQzYThjMjIx.json.bin.part00",
+            "20261106T040628001Z--cnVuOjYxMjQ2MDYxZjlmZWMyOGZhMWI3NjgxZjQzYThjMjIx.json.bin.part01",
+            "20261106T040628001Z--cnVuOjYxMjQ2MDYxZjlmZWMyOGZhMWI3NjgxZjQzYThjMjIx.json.bin.part02"
+          ]
+        }
+      ]
+    },
+    {
+      "historyId": "20261105T145412283Z--cnVuOjM4MzRlMTU3OGNlMDMxZGNjNjNiMzQwMTkyNTI5YTk2",
+      "collectionId": "itinerary-top10-v10-image-20261105",
+      "sealedAt": "2026-11-05T14:54:12.283Z",
+      "rubricVersion": "2026-11-05-answer-first-v10-image-delivery",
+      "displayName": "行程规划 Top 10 · 生产接口 · answer-first V10 · 2026-11-05",
+      "components": [
+        {
+          "digest": "sha256:b4bca3218b32b147433250e49c38ce1897bdce037378ae8adbf58784101a635d",
+          "historyId": "20261105T142433895Z--cnVuOjVjZmNkZmJkMmZmNDhiMjhiNmVmNzhjYzQ2NTU4ODA4",
+          "reportId": "evaluation-report:b0edf786312799371ecb9e341fc24566db54f20668c429bab06a0843ff139f33",
+          "runId": "run:5cfcdfbd2ff48b28b6ef78cc46558808",
+          "scenarioId": "itinerary-top10-production-20261105-pilot",
+          "sealedAt": "2026-11-05T14:24:33.895Z",
+          "size": 3796816,
+          "displayName": "行程规划 Top 1 · 生产接口",
+          "parts": [
+            "20261105T142433895Z--cnVuOjVjZmNkZmJkMmZmNDhiMjhiNmVmNzhjYzQ2NTU4ODA4.json.bin.part00",
+            "20261105T142433895Z--cnVuOjVjZmNkZmJkMmZmNDhiMjhiNmVmNzhjYzQ2NTU4ODA4.json.bin.part01"
+          ]
+        },
+        {
+          "digest": "sha256:529a35edb0cd592f08cde618849b21e3972506e7f43303384c4537fc53358bfe",
+          "historyId": "20261105T145412283Z--cnVuOjM4MzRlMTU3OGNlMDMxZGNjNjNiMzQwMTkyNTI5YTk2",
+          "reportId": "evaluation-report:a7072e9f858ac57f82b89658e80d4332eb14de5b2dfe5eddf5d2887291e76f16",
+          "runId": "run:3834e1578ce031dcc63b340192529a96",
+          "scenarioId": "itinerary-top10-production-20261105-rest",
+          "sealedAt": "2026-11-05T14:54:12.283Z",
+          "size": 48484692,
+          "displayName": "行程规划 Top 2–10 · 生产接口",
+          "parts": [
+            "20261105T145412283Z--cnVuOjM4MzRlMTU3OGNlMDMxZGNjNjNiMzQwMTkyNTI5YTk2.json.bin.part00",
+            "20261105T145412283Z--cnVuOjM4MzRlMTU3OGNlMDMxZGNjNjNiMzQwMTkyNTI5YTk2.json.bin.part01",
+            "20261105T145412283Z--cnVuOjM4MzRlMTU3OGNlMDMxZGNjNjNiMzQwMTkyNTI5YTk2.json.bin.part02",
+            "20261105T145412283Z--cnVuOjM4MzRlMTU3OGNlMDMxZGNjNjNiMzQwMTkyNTI5YTk2.json.bin.part03",
+            "20261105T145412283Z--cnVuOjM4MzRlMTU3OGNlMDMxZGNjNjNiMzQwMTkyNTI5YTk2.json.bin.part04",
+            "20261105T145412283Z--cnVuOjM4MzRlMTU3OGNlMDMxZGNjNjNiMzQwMTkyNTI5YTk2.json.bin.part05",
+            "20261105T145412283Z--cnVuOjM4MzRlMTU3OGNlMDMxZGNjNjNiMzQwMTkyNTI5YTk2.json.bin.part06",
+            "20261105T145412283Z--cnVuOjM4MzRlMTU3OGNlMDMxZGNjNjNiMzQwMTkyNTI5YTk2.json.bin.part07",
+            "20261105T145412283Z--cnVuOjM4MzRlMTU3OGNlMDMxZGNjNjNiMzQwMTkyNTI5YTk2.json.bin.part08",
+            "20261105T145412283Z--cnVuOjM4MzRlMTU3OGNlMDMxZGNjNjNiMzQwMTkyNTI5YTk2.json.bin.part09",
+            "20261105T145412283Z--cnVuOjM4MzRlMTU3OGNlMDMxZGNjNjNiMzQwMTkyNTI5YTk2.json.bin.part10",
+            "20261105T145412283Z--cnVuOjM4MzRlMTU3OGNlMDMxZGNjNjNiMzQwMTkyNTI5YTk2.json.bin.part11"
+          ]
+        }
+      ]
+    },
+    {
+      "historyId": "20261105T141214074Z--cnVuOmUwMDk2OTYyYjBlZWY4MTI0YjU4ZTM5NDZmZjZlZDM3",
+      "collectionId": "scenic-top10-v10-image-20261105",
+      "sealedAt": "2026-11-05T14:12:14.074Z",
+      "rubricVersion": "2026-11-05-answer-first-v10-image-delivery",
+      "displayName": "景点 Top 10 · 生产接口 · answer-first V10 · 2026-11-05",
+      "components": [
+        {
+          "digest": "sha256:525f825ddbb3ad9b4d7e6be6d899572fca5fa3695ebffc74799ec6b1cf6e9dd1",
+          "historyId": "20261105T134856473Z--cnVuOmY3NjRmZWMwMDI4ZjMyOTFiYmYxNzU5Y2Q5MDM4MDdl",
+          "reportId": "evaluation-report:d60cbae30c8ed96a5c4fc3f66b36d25b9ec3d9501c336ed30a67c7a906f19aed",
+          "runId": "run:f764fec0028f3291bbf1759cd903807e",
+          "scenarioId": "scenic-top10-production-20261105-pilot",
+          "sealedAt": "2026-11-05T13:48:56.473Z",
+          "size": 3198216,
+          "displayName": "景点 Top 1 · 生产接口"
+        },
+        {
+          "digest": "sha256:efed1dfecf9755d035314e5529ad1ced7aac3c23f991294f17b8f0408f6a6aaa",
+          "historyId": "20261105T141214074Z--cnVuOmUwMDk2OTYyYjBlZWY4MTI0YjU4ZTM5NDZmZjZlZDM3",
+          "reportId": "evaluation-report:e1dacade4627a2482be0cd79eb17db57826ad29a9f5b3c35b75a9174d2624045",
+          "runId": "run:e0096962b0eef8124b58e3946ff6ed37",
+          "scenarioId": "scenic-top10-production-20261105-rest",
+          "sealedAt": "2026-11-05T14:12:14.074Z",
+          "size": 23181452,
+          "displayName": "景点 Top 2–10 · 生产接口",
+          "parts": [
+            "20261105T141214074Z--cnVuOmUwMDk2OTYyYjBlZWY4MTI0YjU4ZTM5NDZmZjZlZDM3.json.bin.part00",
+            "20261105T141214074Z--cnVuOmUwMDk2OTYyYjBlZWY4MTI0YjU4ZTM5NDZmZjZlZDM3.json.bin.part01",
+            "20261105T141214074Z--cnVuOmUwMDk2OTYyYjBlZWY4MTI0YjU4ZTM5NDZmZjZlZDM3.json.bin.part02",
+            "20261105T141214074Z--cnVuOmUwMDk2OTYyYjBlZWY4MTI0YjU4ZTM5NDZmZjZlZDM3.json.bin.part03",
+            "20261105T141214074Z--cnVuOmUwMDk2OTYyYjBlZWY4MTI0YjU4ZTM5NDZmZjZlZDM3.json.bin.part04",
+            "20261105T141214074Z--cnVuOmUwMDk2OTYyYjBlZWY4MTI0YjU4ZTM5NDZmZjZlZDM3.json.bin.part05"
+          ]
+        }
+      ]
+    },
+    {
+      "historyId": "20261105T133208267Z--cnVuOjNjOTEwMjEyNWUxM2FkMzQ3MjFiNGJiNTMyY2Y5OGJh",
+      "collectionId": "transport-top10-v10-image-20261105",
+      "sealedAt": "2026-11-05T13:32:08.267Z",
+      "rubricVersion": "2026-11-05-answer-first-v10-image-delivery",
+      "displayName": "交通 Top 10 · 生产接口 · answer-first V10 · 2026-11-05",
+      "components": [
+        {
+          "digest": "sha256:d61f5ef81c5f1013925318d54c2ed9a9521eec5cc352789e19b840b8c6dae1ad",
+          "historyId": "20261105T122610940Z--cnVuOjZjYzUxMmMzYjU3NWQ5ODU1ZjYyYjc5ZTllYjExNDM2",
+          "reportId": "evaluation-report:d6254d4a70a57a0a002d83a9d04d693cac0b75602e438018bc4fb6dd6d67f163",
+          "runId": "run:6cc512c3b575d9855f62b79e9eb11436",
+          "scenarioId": "transport-top10-production-20261105-pilot",
+          "sealedAt": "2026-11-05T12:26:10.940Z",
+          "size": 2673476,
+          "displayName": "交通 Top 1 · 生产接口"
+        },
+        {
+          "digest": "sha256:06ad99b3fb9840d0cc4aa0bced00eb40f172b2445900593e15b07111799301e3",
+          "historyId": "20261105T133208267Z--cnVuOjNjOTEwMjEyNWUxM2FkMzQ3MjFiNGJiNTMyY2Y5OGJh",
+          "reportId": "evaluation-report:18e8a994056843d72bc19136882b178c843b46fcbf0df18c4f1ea6dded950420",
+          "runId": "run:3c9102125e13ad34721b4bb532cf98ba",
+          "scenarioId": "transport-top10-production-20261105-rest",
+          "sealedAt": "2026-11-05T13:32:08.267Z",
+          "size": 34740416,
+          "displayName": "交通 Top 2–10 · 生产接口",
+          "parts": [
+            "20261105T133208267Z--cnVuOjNjOTEwMjEyNWUxM2FkMzQ3MjFiNGJiNTMyY2Y5OGJh.json.bin.part00",
+            "20261105T133208267Z--cnVuOjNjOTEwMjEyNWUxM2FkMzQ3MjFiNGJiNTMyY2Y5OGJh.json.bin.part01",
+            "20261105T133208267Z--cnVuOjNjOTEwMjEyNWUxM2FkMzQ3MjFiNGJiNTMyY2Y5OGJh.json.bin.part02",
+            "20261105T133208267Z--cnVuOjNjOTEwMjEyNWUxM2FkMzQ3MjFiNGJiNTMyY2Y5OGJh.json.bin.part03",
+            "20261105T133208267Z--cnVuOjNjOTEwMjEyNWUxM2FkMzQ3MjFiNGJiNTMyY2Y5OGJh.json.bin.part04",
+            "20261105T133208267Z--cnVuOjNjOTEwMjEyNWUxM2FkMzQ3MjFiNGJiNTMyY2Y5OGJh.json.bin.part05"
+          ]
+        }
+      ]
+    },
+    {
+      "historyId": "20261105T125947260Z--cnVuOmUwZjRmMTVmMWQ0ZDBiZDUxNjdmNDE4Mjk4YmZmNzhi",
+      "collectionId": "hotel-top10-v10-image-20261105",
+      "sealedAt": "2026-11-05T12:59:47.260Z",
+      "rubricVersion": "2026-11-05-answer-first-v10-image-delivery",
+      "displayName": "酒店 Top 10 · 生产接口 · answer-first V10 · 2026-11-05",
+      "components": [
+        {
+          "digest": "sha256:712295f7add3ce494e61f0248a38415e91d6850f9ab312d8914b5e124fee7cb7",
+          "historyId": "20261105T122345637Z--cnVuOjgwMGNkMGY1MGJjNDY3ZTllNWE5NTQ2ZDg0YmM4OTA2",
+          "reportId": "evaluation-report:e3ac9bfa7b08cc47b02d02d0e11ccad8faee73ff7935a8de1d1da00afdfe0e8c",
+          "runId": "run:800cd0f50bc467e9e5a9546d84bc8906",
+          "scenarioId": "hotel-top10-production-20261105-pilot",
+          "sealedAt": "2026-11-05T12:23:45.637Z",
+          "size": 2320154,
+          "displayName": "酒店 Top 1 · 生产接口"
+        },
+        {
+          "digest": "sha256:2cbd76c9015649432232fd5a34be8dad5d767a87a1eb74f7dd4609a7bc3921c8",
+          "historyId": "20261105T125947260Z--cnVuOmUwZjRmMTVmMWQ0ZDBiZDUxNjdmNDE4Mjk4YmZmNzhi",
+          "reportId": "evaluation-report:41512e24f3874a0339ff0648d53bc711ba61f2b04c0e05e477b73f931498f187",
+          "runId": "run:e0f4f15f1d4d0bd5167f418298bff78b",
+          "scenarioId": "hotel-top10-production-20261105-rest",
+          "sealedAt": "2026-11-05T12:59:47.260Z",
+          "size": 26895473,
+          "displayName": "酒店 Top 2–10 · 生产接口",
+          "parts": [
+            "20261105T125947260Z--cnVuOmUwZjRmMTVmMWQ0ZDBiZDUxNjdmNDE4Mjk4YmZmNzhi.json.bin.part00",
+            "20261105T125947260Z--cnVuOmUwZjRmMTVmMWQ0ZDBiZDUxNjdmNDE4Mjk4YmZmNzhi.json.bin.part01",
+            "20261105T125947260Z--cnVuOmUwZjRmMTVmMWQ0ZDBiZDUxNjdmNDE4Mjk4YmZmNzhi.json.bin.part02",
+            "20261105T125947260Z--cnVuOmUwZjRmMTVmMWQ0ZDBiZDUxNjdmNDE4Mjk4YmZmNzhi.json.bin.part03",
+            "20261105T125947260Z--cnVuOmUwZjRmMTVmMWQ0ZDBiZDUxNjdmNDE4Mjk4YmZmNzhi.json.bin.part04",
+            "20261105T125947260Z--cnVuOmUwZjRmMTVmMWQ0ZDBiZDUxNjdmNDE4Mjk4YmZmNzhi.json.bin.part05",
+            "20261105T125947260Z--cnVuOmUwZjRmMTVmMWQ0ZDBiZDUxNjdmNDE4Mjk4YmZmNzhi.json.bin.part06"
+          ]
+        }
+      ]
+    },
+    {
+      "historyId": "20261105T124048404Z--cnVuOjgwZDQ0NjM5ZTU2NWY0MmY2MWQ0N2JkYTQ3OGU2MzY0",
+      "collectionId": "ticket-top10-v10-image-20261105",
+      "sealedAt": "2026-11-05T12:40:48.404Z",
+      "rubricVersion": "2026-11-05-answer-first-v10-image-delivery",
+      "displayName": "门票 Top 10 · 生产接口 · answer-first V10 · 2026-11-05",
+      "components": [
+        {
+          "digest": "sha256:5cc08f279da2f6b181b5f26ecf6bc0acc8557cb0626c6f83ab0bf88583d9f357",
+          "historyId": "20261105T122145158Z--cnVuOjQzYjZhNWZmMTA1ODRjNTJhZWYyMjY3Nzg5NGRhNzI1",
+          "reportId": "evaluation-report:56c645ff451a247d0d269a8a8b865dfd8aeea6c2cbb5420139eb52a3a8c8701a",
+          "runId": "run:43b6a5ff10584c52aef22677894da725",
+          "scenarioId": "ticket-top10-production-20261105-pilot",
+          "sealedAt": "2026-11-05T12:21:45.158Z",
+          "size": 1009478,
+          "displayName": "门票 Top 1 · 生产接口"
+        },
+        {
+          "digest": "sha256:23ab4295399fe3df7293d492746bb6fd317743bdc2f66cd2d299bf8031dcd36f",
+          "historyId": "20261105T124048404Z--cnVuOjgwZDQ0NjM5ZTU2NWY0MmY2MWQ0N2JkYTQ3OGU2MzY0",
+          "reportId": "evaluation-report:1154e939a344d38bd1b442c97ebe7954119e41683d8cfd8780a34cace1c059f1",
+          "runId": "run:80d44639e565f42f61d47bda478e6364",
+          "scenarioId": "ticket-top10-production-20261105-rest",
+          "sealedAt": "2026-11-05T12:40:48.404Z",
+          "size": 14774981,
+          "displayName": "门票 Top 2–10 · 生产接口",
+          "parts": [
+            "20261105T124048404Z--cnVuOjgwZDQ0NjM5ZTU2NWY0MmY2MWQ0N2JkYTQ3OGU2MzY0.json.bin.part00",
+            "20261105T124048404Z--cnVuOjgwZDQ0NjM5ZTU2NWY0MmY2MWQ0N2JkYTQ3OGU2MzY0.json.bin.part01",
+            "20261105T124048404Z--cnVuOjgwZDQ0NjM5ZTU2NWY0MmY2MWQ0N2JkYTQ3OGU2MzY0.json.bin.part02",
+            "20261105T124048404Z--cnVuOjgwZDQ0NjM5ZTU2NWY0MmY2MWQ0N2JkYTQ3OGU2MzY0.json.bin.part03"
+          ]
+        }
+      ]
+    },
+    {
+      "digest": "sha256:921fab421634913f6c9e362d170dc2c94449c6e678f49fdc87502f14d79a5180",
+      "historyId": "20261103T044601843Z--cnVuOmRhNzBmMjE2Y2U2OTk5ZDExZTQzNTM2ZGU2MGRkYWU4",
+      "reportId": "evaluation-report:5ced9126ba77a7370c3af74ca70dc8a83d2f23c0d15d5c599a173864df068952",
+      "runId": "run:da70f216ce6999d11e43536de60ddae8",
+      "scenarioId": "transport-top5-v10-20261103",
+      "sealedAt": "2026-11-03T04:46:01.843Z",
+      "size": 8947642,
+      "displayName": "交通 Top 5 · 行程规划只出具体poi，其他非纯模糊query先答后澄清"
+    },
+    {
+      "digest": "sha256:53f14b8edaa7107c345deaab7f1dd12f2f6c43ddcff3501308430e782d1e12fb",
+      "historyId": "20261103T043856932Z--cnVuOjMzYTQ4MGFkNzM3OTRhZmJhZTgxYzk0YzQ4NTlmOTU5",
+      "reportId": "evaluation-report:126d4cf3c1278ec569e414ca1cd06a96229cea49af6a80313b2557d5a62cd677",
+      "runId": "run:33a480ad73794afbae81c94c4859f959",
+      "scenarioId": "ticket-top5-v10-20261103",
+      "sealedAt": "2026-11-03T04:38:56.932Z",
+      "size": 3427526,
+      "displayName": "门票 Top 5 · 行程规划只出具体poi，其他非纯模糊query先答后澄清"
+    },
+    {
+      "digest": "sha256:2b63178c0cf6131929d7f59e2f08e6704e8980cb60a13242d76c70a6a3efc2c8",
+      "historyId": "20261103T043250954Z--cnVuOmVlZmU3ZjZhMzZlMTM1ZjExM2FmZjUxMGYyNDhlMzNj",
+      "reportId": "evaluation-report:d1ce15c9fe127b13718c331dbd36aeac828b199b7bce259493fed1a63fb45e54",
+      "runId": "run:eefe7f6a36e135f113aff510f248e33c",
+      "scenarioId": "scenic-top5-v10-20261103",
+      "sealedAt": "2026-11-03T04:32:50.954Z",
+      "size": 9006552,
+      "displayName": "景点 Top 5 · 行程规划只出具体poi，其他非纯模糊query先答后澄清"
+    },
+    {
+      "digest": "sha256:2f473529c45dc908af572d7bcae000fa481a921040fbe858c1dd9b9bc1b947d6",
+      "historyId": "20261103T042239970Z--cnVuOmQ1MDgwN2JmZGU4ZTQ2ZGJhNjZlMzY2YjExZTk1ZmRm",
+      "reportId": "evaluation-report:d55702f5866008358fbabc6ee3e35ac2a717e241f1e9cdd324d1903282cdee88",
+      "runId": "run:d50807bfde8e46dba66e366b11e95fdf",
+      "scenarioId": "hotel-top5-v10-20261103",
+      "sealedAt": "2026-11-03T04:22:39.970Z",
+      "size": 7764748,
+      "displayName": "酒店 Top 5 · 行程规划只出具体poi，其他非纯模糊query先答后澄清"
+    },
+    {
+      "digest": "sha256:941b11a4cc6cbe3c399b35ff54f7d5dcadd892d3bb3abd044e971e843259ddba",
+      "historyId": "20261103T041200614Z--cnVuOjQwMDE3YzUzNjhhMTJkN2IwMTIxMGNmYzMzYmU0ZDIx",
+      "reportId": "evaluation-report:af34ac47d9b1e50f256e3ce1cad1dab7c270873d4568f7e9aedeff5ec9203758",
+      "runId": "run:40017c5368a12d7b01210cfc33be4d21",
+      "scenarioId": "itinerary-top5-v10-20261103",
+      "sealedAt": "2026-11-03T04:12:00.614Z",
+      "size": 15070387,
+      "displayName": "行程规划 Top 5 · 行程规划只出具体poi，其他非纯模糊query先答后澄清"
+    }
+  ]
+}
